@@ -1,36 +1,58 @@
-摘要	
-本项目设计并实现了一套基于RTT环境，使用STM32主控的智能仓储系统，以智能小车为核心，结合货架、线路、货物等真实场景，构建了一个功能完善的智能仓储解决方案。系统具备识别货物类型、存取货物、按指定路线运输、巡迹修正、避障保护及语音控制等多项智能功能，能够有效提高仓储作业的自动化水平和运行效率。
-本项目的创新点包括数字识别货物标签、语音控制打断与修改指令、四驱麦克纳姆轮底盘的高灵活性设计、超声波避障的实时响应等。实际测试表明，该系统具有高效性、稳定性和灵活性，为快递行业的自动化管理提供了有力支持，并具有广阔的应用前景和改进空间。
-     
-作品概述
-1.1	功能与特性
-本仓储系统以STM32F407ZGT6最小系统板主控的智能小车为系统主体搭配场地、线路、货架、货物等实际环境的搭建，组成了完整的智能仓储系统，兼顾了识别货物类型、存取货物、按照既定路线运输货物并寻迹修正，避障保护以及语音控制等智能功能的结合实现。
-![image](https://github.com/user-attachments/assets/de695204-2a24-4c4b-b382-028faed0a236)
-![微信图片_20250710164301](https://github.com/user-attachments/assets/c064582d-4c58-4b1d-97b0-892128c8407b)
+# STM32CubeF4 HAL Driver MCU Component
 
-应用领域
-主要应用于快递行业，该系统用于在仓库内进行快速的货物分拣以及存取运输功能，稳定性和灵活性较强，便于自动化管理，同时控制便捷，可以提高工作效率、减少人力成本，便于统一协调。
+![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/stm32f4xx_hal_driver.svg?color=brightgreen)
 
-主要技术特点
-（1）	智能控制：可以最大限度减少人力成本，简化操作，能够实现集中调度，提高工作效率，创造更多价值
-（2）	功能集成：通过多个技术模块结合，应用面更广，满足的需求更多
-（3）	稳定性：识别更加精准，判断执行标准统一，并时刻宏观检测，减少错误，使得整个系统更严谨规范化
+## Overview
 
-主要性能指标
-指标类别	具体指标
-避障能力	避障反应距离：5 cm；响应速度：100 ms
-数字识别性能	数字标签识别帧率：每 5 秒输出一次结果
-运行精准度	巡线精准度：黑线偏离 ±0.5 cm
-操作时间	任务延时：货物放置/拾取延时 10 秒
-语音识别性能	唤醒时间：< 1000 ms；支持停止/启动指令识别
-丝杆横向移动分度值	丝杆横向单次数移动距离：1cm
-丝杆纵向移动分度值	丝杆纵向单次数移动距离：1cm
+**STM32Cube** is an STMicroelectronics original initiative to ease developers' life by reducing efforts, time and cost.
 
-主要创新点
-（1）	货物类型的判断采用数字识别，可一直识别货物标签类型进行存货或者识别号码牌进行取货，较为便捷。
-（2）	小车可通过语音控制随时打断指令并修改要求。
-（3）	小车结构以及货物托盘类型的创新。
-（4）	超声波检测防止碰撞损坏并自动停止，移除障碍物后自动继续运行。
-（5）	小车运行采用循迹模式，更加稳定也便于多样化路线的设计，同时四驱麦轮的结构提高稳定性。
+**STM32Cube** covers the overall STM32 products portfolio. It includes a comprehensive embedded software platform delivered for each STM32 series.
+   * The CMSIS modules (core and device) corresponding to the ARM(tm) core implemented in this STM32 product.
+   * The STM32 HAL-LL drivers, an abstraction layer offering a set of APIs ensuring maximized portability across the STM32 portfolio.
+   * The BSP drivers of each evaluation, demonstration or nucleo board provided for this STM32 series.
+   * A consistent set of middleware libraries such as RTOS, USB, FatFS, graphics, touch sensing library...
+   * A full set of software projects (basic examples, applications, and demonstrations) for each board provided for this STM32 series.
 
+Two models of publication are proposed for the STM32Cube embedded software:
+   * The monolithic **MCU Package**: all STM32Cube software modules of one STM32 series are present (Drivers, Middleware, Projects, Utilities) in the repository (usual name **STM32Cubexx**, xx corresponding to the STM32 series).
+   * The **MCU component**: each STM32Cube software module being part of the STM32Cube MCU Package, is delivered as an individual repository, allowing the user to select and get only the required software functions.
 
+## Description
+
+This **stm32f4xx_hal_driver** MCU component repository is one element of the STM32CubeF4 MCU embedded software package, providing the **HAL-LL Drivers** part.
+
+## License
+
+Copyright (c) 2016 STMicroelectronics.
+
+This software component is licensed by STMicroelectronics under BSD-3-Clause license. You may not use this file except in compliance with the License. 
+You may obtain a copy of the License [here](https://opensource.org/licenses/BSD-3-Clause).
+
+## Release note
+
+Details about the content of this release are available in the release note [here](https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32f4xx_hal_driver/blob/master/Release_Notes.html).
+
+## Compatibility information
+
+In this table, you can find the successive versions of this HAL-LL Driver component, in line with the corresponding versions of the full MCU package:
+
+It is **crucial** that you use a consistent set of versions for the CMSIS Core - CMSIS Device - HAL, as mentioned in this table.
+
+HAL Driver F4 | CMSIS Device F4 | CMSIS Core | Was delivered in the full MCU package
+------------- | --------------- | ---------- | -------------------------------------
+Tag v1.7.6 | Tag v2.6.3 | Tag v5.4.0_cm4 | Tag v1.24.1 (and following, if any, till HAL tag)
+Tag v1.7.7 | Tag v2.6.4 | Tag v5.4.0_cm4 | Tag v1.24.2 (and following, if any, till HAL tag)
+Tag v1.7.8 | Tag v2.6.5 | Tag v5.4.0_cm4 | Tag v1.25.0 (and following, if any, till HAL tag)
+Tag v1.7.9 | Tag v2.6.5 | Tag v5.4.0_cm4 | Tag v1.25.1 (and following, if any, till HAL tag)
+Tag v1.7.10| Tag v2.6.5 | Tag v5.4.0_cm4 | Tag v1.25.2 (and following, if any, till HAL tag)
+Tag v1.7.11| Tag v2.6.6 | Tag v5.4.0_cm4 | Tag v1.26.0 (and following, if any, till HAL tag)
+Tag v1.7.12| Tag v2.6.6 | Tag v5.4.0_cm4 | Tag v1.26.1 (and following, if any, till HAL tag)
+Tag v1.7.13| Tag v2.6.7 | Tag v5.4.0_cm4 | Tag v1.26.2 (and following, if any, till HAL tag)
+
+The full **STM32CubeF4** MCU package is available [here](https://github.com/STMicroelectronics/STM32CubeF4).
+
+## Troubleshooting
+
+If you have any issue with the **software content** of this repository, you can file an issue [here](https://github.com/STMicroelectronics/stm32f4xx_hal_driver/issues/new/choose).
+
+For any other question related to the product, the tools, the environment, you can submit a topic on the [ST Community/STM32 MCUs forum](https://community.st.com/s/group/0F90X000000AXsASAW/stm32-mcus).
