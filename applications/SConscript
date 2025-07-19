@@ -1,0 +1,13 @@
+import os
+
+# 获取当前路径下所有 .c 文件
+src = Glob('*.c')
+
+# 添加到默认目标
+group = Group(
+    name = 'application',
+    src = src,
+    CPPPATH = ['.'],
+)
+
+Return('group')
